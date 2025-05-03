@@ -39,7 +39,7 @@ const projects: Project[] = [
     description: "A personal portfolio website using advanced animations and effects.",
     technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript", "Firebase"],
     demoUrl: "https://adarshnambiar.me",
-    sourceUrl: "https://github.com/myportfolio",
+    sourceUrl: "https://github.com/adarshnambiar12/myportfolio",
     image: "/images/projects/portfolio.png",
   },
   {
