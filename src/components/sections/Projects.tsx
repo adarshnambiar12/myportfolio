@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -61,13 +62,23 @@ const projects: Project[] = [
 ];
 
 export default function Projects() {
+  const [activeProject, setActiveProject] = useState<number | null>(null);
+
+  const toggleProject = (index: number) => {
+    setActiveProject(activeProject === index ? null : index);
+  };
+
   return (
     <section id="projects" className="py-20 container mx-auto px-4 sm:px-6">
       <SectionTitle title="Projects" />
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {projects.map((project, index) => (
-          <div key={project.title} className="relative h-full group">
+          <div 
+            key={project.title} 
+            className="relative h-full group"
+            onClick={() => toggleProject(index)}
+          >
             <AnimatedCard
               delay={index * 0.1}
               className="h-full flex flex-col relative border border-border/30 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 bg-card"
@@ -94,6 +105,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <motion.h3 
                       className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300 flex items-center cursor-pointer"
@@ -130,16 +142,23 @@ export default function Projects() {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-b from-transparent to-primary/5 pointer-events-none transition-opacity duration-300"></div>
             </AnimatedCard>
             
-            {/* Action buttons overlay - Uses CSS-only hover effect via group */}
+            {/* Action buttons overlay */}
             {(project.demoUrl || project.sourceUrl) && (
-              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-5 transition-all duration-300 z-10 rounded-xl">
-                <div className="flex items-center justify-center gap-5 transition-transform duration-300 transform translate-y-4 group-hover:translate-y-0">
+              <div 
+                className={`absolute inset-0 bg-black/70 flex items-center justify-center gap-5 transition-all duration-300 z-10 rounded-xl ${
+                  activeProject === index ? 'opacity-100' : 'opacity-0 md:group-hover:opacity-100'
+                }`}
+              >
+                <div className={`flex items-center justify-center gap-5 transition-transform duration-300 transform ${
+                  activeProject === index ? 'translate-y-0' : 'translate-y-4 md:group-hover:translate-y-0'
+                }`}>
                   {project.demoUrl && (
                     <a 
                       href={project.demoUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground shadow-lg hover:scale-110 active:scale-95 transition-transform"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <ArrowUpRight size={20} />
                     </a>
@@ -150,6 +169,7 @@ export default function Projects() {
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-12 h-12 rounded-full bg-background flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <Github size={20} />
                     </a>
