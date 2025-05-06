@@ -17,4 +17,16 @@ const app = initializeApp(firebaseConfig);
 // Firestore instance
 const db = getFirestore(app);
 
+// Initialize Firebase Analytics
+if (typeof window !== "undefined") {
+  import("firebase/analytics").then(({ getAnalytics, isSupported }) => {
+    isSupported().then((supported) => {
+      if (supported) {
+        getAnalytics(app);
+      }
+    });
+  });
+}
+
+
 export {db};
