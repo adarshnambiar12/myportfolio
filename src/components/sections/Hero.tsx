@@ -177,7 +177,7 @@ export default function Hero() {
             transition: { duration: 0.2 }
           }}
           whileTap={{ scale: 0.98 }}
-          className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium transition-all shadow-md hover:shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background cursor-pointer"
+          className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium transition-all shadow-md hover:shadow-lg hover:bg-primary/90 focus:outline-none cursor-pointer"
         >
           Get in Touch
         </motion.a>
@@ -193,7 +193,7 @@ export default function Hero() {
             transition: { duration: 0.2 }
           }}
           whileTap={{ scale: 0.98 }}
-          className="px-6 py-3 bg-background border border-border rounded-lg font-medium transition-all hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-background cursor-pointer"
+          className="px-6 py-3 bg-background border border-primary/30 rounded-lg font-medium transition-all hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-background cursor-pointer"
         >
           View Work
         </motion.a>
@@ -211,7 +211,7 @@ export default function Hero() {
             transition: { duration: 0.2 }
           }}
           whileTap={{ scale: 0.98 }}
-          className="px-6 py-3 bg-background border border-primary/30 rounded-lg font-medium transition-all hover:border-primary hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background flex items-center"
+          className="px-6 py-3 bg-background border border-primary/30 rounded-lg font-medium transition-all hover:bg-accent focus:outline-none  focus:ring-2 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-background flex items-center"
         >
           <FileDown className="w-5 h-5 mr-2 text-primary" />
           Download Resume
