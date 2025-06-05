@@ -1,6 +1,6 @@
 # Adarsh Nambiar - Portfolio Website
 
-![Portfolio Preview](public/images/projects/portfolio.png)
+![Portfolio Preview](https://github.com/user-attachments/assets/336b24d2-4016-42eb-89c3-1a812d4c26a1)
 
 A modern, responsive portfolio website showcasing my skills, projects, and professional experience. Built with Next.js, TypeScript, and Framer Motion for seamless animations and transitions.
 
