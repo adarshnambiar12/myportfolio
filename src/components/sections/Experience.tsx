@@ -9,6 +9,7 @@ import ParallaxWrapper from "@/components/ui/ParallaxWrapper";
 interface Experience {
   company: string;
   position: string;
+  docLink?: string;
   duration: string;
   description: string[];
 }
@@ -17,8 +18,9 @@ interface Experience {
 const experiences: Experience[] = [
   {
     company: "Teraforge Digital Lab LLP",
-    position: "Full Stack Developer Intern",
-    duration: "April 2025 - Present",
+    position: "Software Development Intern",
+    duration: "15th April 2025 - 1st June 2025",
+    docLink: "https://drive.google.com/drive/folders/1SeWvU0fPMdFH2yKRDOepwwE0im2hVMzz?usp=sharing",
     description: [
       "Built a car listing web application using React, integrating an AI-powered chatbot with contextual awareness and smart features.",
       "Implemented Firebase for real-time database management and secure user authentication.",
@@ -30,6 +32,7 @@ const experiences: Experience[] = [
     company: "VIT Mumbai",
     position: "Systems Setup Intern",
     duration: "Jun 2024 - Jun 2024",
+    docLink: "https://drive.google.com/file/d/1rP-Um37wOeHpinSdf2rFJ-34x_IDQP8Y/view?usp=sharing",
     description: [
       "Gained hands-on experience in various aspects of Systems infrastructure and administration.",
       "Worked on setting up PCs, installing OS from Windows Deployment Center (WDC), and configuring systems to join a domain with security settings",
@@ -96,17 +99,6 @@ export default function Experience() {
                 />
               </motion.div>
 
-              {/* Date indicator for mobile
-              {isMobile && (
-                <div className="absolute left-[-42px] sm:left-[-54px] top-5 sm:top-7 flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-border bg-background shadow-sm z-10">
-                  <div className="text-[10px] sm:text-xs text-center font-medium leading-tight">
-                    {exp.duration.split(" - ")[0].split(" ")[0]}
-                    <br />
-                    {exp.duration.split(" - ")[0].split(" ")[1].substring(0, 4)}
-                  </div>
-                </div>
-              )} */}
-
               <motion.div
                 initial={{ opacity: 0, y: 30, x: isMobile ? 0 : index % 2 === 0 ? 30 : -30 }}
                 whileInView={{ opacity: 1, y: 0, x: 0 }}
@@ -120,7 +112,7 @@ export default function Experience() {
                 className="bg-card border border-border/60 rounded-xl p-5 sm:p-6 md:p-8 shadow-md relative overflow-hidden group"
               >
                 {/* Subtle gradient highlight */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 <span className="inline-block px-3 py-1 text-xs sm:text-sm font-medium text-primary bg-primary/10 rounded-full mb-3">
                   {exp.duration}
@@ -128,6 +120,15 @@ export default function Experience() {
 
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 group-hover:text-primary transition-colors duration-300">{exp.position}</h3>
                 <h4 className="text-base sm:text-lg font-medium text-foreground/80 mb-3 sm:mb-5">{exp.company}</h4>
+
+                <a
+                  href={exp.docLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm sm:text-base text-primary mb-4 inline-block cursor-pointer z-10"
+                >
+                  View Document
+                </a>
 
                 <motion.ul
                   className={`space-y-2 sm:space-y-3 relative ${(!isMobile && index % 2 === 0) ? "md:text-right" : ""}`}

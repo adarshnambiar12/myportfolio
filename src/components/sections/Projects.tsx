@@ -24,7 +24,7 @@ const projects: Project[] = [
     description: "An interactive simulator that allows users to experience the electoral process in India.",
     technologies: ["React.js", "Tailwind CSS", "MongoDB", "Node.js", "Express.js", "Cashfree",],
     demoUrl: "https://voteplay.tech",
-    sourceUrl: "https://github.com/adarshnambiar12",
+    sourceUrl: "https://github.com/adarshnambiar12/voteplay-simulator",
     image: "/images/projects/voteplay.png",
   },
   {
@@ -32,7 +32,7 @@ const projects: Project[] = [
     description: "The NSS website serves as a central hub for updates and activities, promoting social and civic responsibility among students.",
     technologies: ["React", "Tailwind CSS", "Cloudinary", "Netlify"],
     demoUrl: "https://nssvit.netlify.app",
-    sourceUrl: "https://github.com/adarshnambiar12",
+    sourceUrl: "https://github.com/adarshnambiar12/nss-vit-website",
     image: "/images/projects/nssvit.png",
   },
   {
@@ -56,7 +56,7 @@ const projects: Project[] = [
     description: "A fun memory game to test your memory skills.",
     technologies: ["HTML", "CSS", "JavaScript"],
     demoUrl: "https://memorygameplay.netlify.app/",
-    sourceUrl: "https://github.com/adarshnambiar12",
+    sourceUrl: "https://github.com/adarshnambiar12/MemoryGame",
     image: "/images/projects/memorygame.png",
   },
 ];

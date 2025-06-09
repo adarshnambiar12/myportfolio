@@ -19,12 +19,12 @@ const volunteerRoles: VolunteerRole[] = [
   {
     title: "Student Volunteer",
     organization: "National Service Scheme",
-    period: "Jun 2023 - May 2024",
+    period: "May 2023 - April 2025",
   },
   {
     title: "Documentation Head",
     organization: "National Service Scheme",
-    period: "May 2024 - Feb 2025",
+    period: "May 2024 - April 2025",
   },
 ];
 
